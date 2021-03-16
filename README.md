@@ -1,4 +1,4 @@
-# PyTracking
+# Transformer Meets Tracker: Exploiting Temporal Context for Robust Visual Tracking
 A general python framework for visual object tracking and video object segmentation, based on **PyTorch**.
 
 ### New version released!
@@ -14,12 +14,7 @@ We advise to check the updated implementation and train scripts of DiMP in order
 
 ## Highlights
 
-### PrDiMP, DiMP and ATOM Trackers
 
-Official implementation of the **PrDiMP** (CVPR 2020), **DiMP** (ICCV 2019), and 
-**ATOM** (CVPR 2019) trackers, including complete **training code** and trained models.
-
-### [Tracking Libraries](pytracking)
 
 Libraries for implementing and evaluating visual trackers. It includes
 
@@ -37,53 +32,9 @@ Libraries for implementing and evaluating visual trackers. It includes
 * And much more...
 
 
-## Trackers
+## Tracker
 The toolkit contains the implementation of the following trackers.  
 
-### PrDiMP
-**[[Paper]](https://arxiv.org/pdf/2003.12565)  [[Raw results]](MODEL_ZOO.md#Raw-Results)
-  [[Models]](MODEL_ZOO.md#Models)  [[Training Code]](./ltr/README.md#PrDiMP)  [[Tracker Code]](./pytracking/README.md#DiMP)**
-    
-Official implementation of the **PrDiMP** tracker. This work proposes a general 
-formulation for probabilistic regression, which is then applied to visual tracking in the DiMP framework.
-The network predicts the conditional probability density of the target state given an input image.
-The probability density is flexibly parametrized by the neural network itself.
-The regression network is trained by directly minimizing the Kullback-Leibler divergence. 
-
-### DiMP
-**[[Paper]](https://arxiv.org/pdf/1904.07220)  [[Raw results]](MODEL_ZOO.md#Raw-Results)
-  [[Models]](MODEL_ZOO.md#Models)  [[Training Code]](./ltr/README.md#DiMP)  [[Tracker Code]](./pytracking/README.md#DiMP)**
-    
-Official implementation of the **DiMP** tracker. DiMP is an end-to-end tracking architecture, capable
-of fully exploiting both target and background appearance
-information for target model prediction. It is based on a target model prediction network, which is derived from a discriminative
-learning loss by applying an iterative optimization procedure. The model prediction network employs a steepest descent 
-based methodology that computes an optimal step length in each iteration to provide fast convergence. The model predictor also
-includes an initializer network that efficiently provides an initial estimate of the model weights.  
-
-![DiMP overview figure](pytracking/.figs/dimp_overview.png)
- 
-### ATOM
-**[[Paper]](https://arxiv.org/pdf/1811.07628)  [[Raw results]](MODEL_ZOO.md#Raw-Results)
-  [[Models]](MODEL_ZOO.md#Models)  [[Training Code]](./ltr/README.md#ATOM)  [[Tracker Code]](./pytracking/README.md#ATOM)**  
- 
-Official implementation of the **ATOM** tracker. ATOM is based on 
-(i) a **target estimation** module that is trained offline, and (ii) **target classification** module that is 
-trained online. The target estimation module is trained to predict the intersection-over-union (IoU) overlap 
-between the target and a bounding box estimate. The target classification module is learned online using dedicated 
-optimization techniques to discriminate between the target object and background.
- 
-![ATOM overview figure](pytracking/.figs/atom_overview.png)
- 
-### ECO
-**[[Paper]](https://arxiv.org/pdf/1611.09224.pdf)  [[Models]](https://drive.google.com/open?id=1aWC4waLv_te-BULoy0k-n_zS-ONms21S)  [[Tracker Code]](./pytracking/README.md#ECO)**  
-
-An unofficial implementation of the **ECO** tracker. It is implemented based on an extensive and general library for [complex operations](pytracking/libs/complex.py) and [Fourier tools](pytracking/libs/fourier.py). The implementation differs from the version used in the original paper in a few important aspects. 
-1. This implementation uses features from vgg-m layer 1 and resnet18 residual block 3.   
-2. As in our later [UPDT tracker](https://arxiv.org/pdf/1804.06833.pdf), seperate filters are trained for shallow and deep features, and extensive data augmentation is employed in the first frame.  
-3. The GMM memory module is not implemented, instead the raw projected samples are stored.  
-
-Please refer to the [official implementation of ECO](https://github.com/martin-danelljan/ECO) if you are looking to reproduce the results in the ECO paper or download the raw results.
 
 
 ## [Model Zoo](MODEL_ZOO.md)
@@ -123,11 +74,6 @@ python run_webcam.py dimp dimp50
 ```  
 
 
-## What's next?
-
-#### [pytracking](pytracking) - for implementing your tracker
-
-#### [ltr](ltr) - for training your tracker
 
 ## Main Contributors
 
