@@ -1,5 +1,4 @@
-# Transformer Meets Tracker:
-# Exploiting Temporal Context for Robust Visual Tracking
+# Transformer Meets Tracker: Exploiting Temporal Context for Robust Visual Tracking
 A general python framework for visual object tracking and video object segmentation, based on **PyTorch**.
 
 ### New version released!
