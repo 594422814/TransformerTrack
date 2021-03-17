@@ -58,7 +58,7 @@ If you find this work useful for your research, please consider citing our work:
 }
 ```
 
-## Acknowledge
+## Acknowledgment
 Our transformer-assisted tracker is based on [PyTracking](https://github.com/visionml/pytracking). We sincerely thank the authors Martin Danelljan and Goutam Bhat for providing this framework.
 
 ## Contact
