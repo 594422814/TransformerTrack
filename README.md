@@ -47,7 +47,7 @@ Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/
 Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/pytracking/README.md) in the ```pytracking``` folder.
 
 
-### Citation
+## Citation
 If you find this work useful for your research, please consider citing our work:
 ```
 @inproceedings{Wang_2021_Unsupervised,
@@ -58,9 +58,9 @@ If you find this work useful for your research, please consider citing our work:
 }
 ```
 
-### Acknowledge
+## Acknowledge
 Our transformer-assisted tracker is based on [PyTracking](https://github.com/visionml/pytracking). We sincerely thank the authors Martin Danelljan and Goutam Bhat for providing this framework.
 
-### Contact
+## Contact
 If you have any questions, please feel free to contact wn6149@mail.ustc.edu.cn
 
