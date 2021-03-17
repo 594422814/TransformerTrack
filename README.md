@@ -5,6 +5,8 @@ Accepted by **CVPR 2021 (Oral)**
 
 This repository includes Python (PyTorch) implementation of the TrDiMP and TrSiam trackers, to appear in CVPR 2021.
 
+![](../main/TransformerTrack.png)
+
 ## Tracking results and pre-trained model
 
 **Tracking results:** the raw results of TrDiMP/TrSiam on 7 benchmarks including OTB, UAV, NFS, VOT2018, GOT-10k, TrackingNet, and LaSOT can be found [here](https://github.com/594422814/TransformerTrack/releases/download/results/Tracking_results.zip).
