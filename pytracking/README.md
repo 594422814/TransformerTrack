@@ -69,7 +69,7 @@ For more details, please refer to GOT-10K ([Github](https://github.com/got-10k/t
 To run and evaluate the tracker using GOT-10k toolkit, you have to modify the ```/tracker/trdimp/trdimp.py``` to ensure it supports the input and output formats of GOT-10k toolkit. ```/tracker/trdimp/trdimp_for_GOT.py``` is an example.
 
 **Run the tracker on the GOT-10k**  
-This is done using the ```GOT10k_GOT.py``` script
+This is done using the provided ```GOT10k_GOT.py``` script. You can also write your own script. More details can be found in [GOT-10k](https://github.com/got-10k/toolkit.git)
 ```bash
 python GOT10k_GOT.py --tracker_name tracker_name --tracker_param tracker_param
 ```
