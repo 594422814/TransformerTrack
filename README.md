@@ -44,7 +44,7 @@ Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/
 
 ## Testing the TrDiMP/TrSiam Tracker
 
-Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/pytracking/README.md) in the ```pytracking``` folder.
+Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/pytracking/README.md) in the ```pytracking``` folder. As shown in ```pytracking/README.md```, you can either use this PyTracking toolkit or GOT-10k toolkit to repreduce the tracking results.
 
 
 ## Citation
@@ -59,7 +59,7 @@ If you find this work useful for your research, please consider citing our work:
 ```
 
 ## Acknowledgment
-Our transformer-assisted tracker is based on [PyTracking](https://github.com/visionml/pytracking). We sincerely thank the authors Martin Danelljan and Goutam Bhat for providing this framework.
+Our transformer-assisted tracker is based on [PyTracking](https://github.com/visionml/pytracking). We sincerely thank the authors Martin Danelljan and Goutam Bhat for providing this great framework.
 
 ## Contact
 If you have any questions, please feel free to contact wn6149@mail.ustc.edu.cn
