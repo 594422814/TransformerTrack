@@ -75,7 +75,7 @@ python GOT10k_GOT.py --tracker_name tracker_name --tracker_param tracker_param
 ```
 Here, ```tracker_name``` is the name of tracker, e.g. ```trdimp```. ```tracker_param``` is the parameter setting, e.g. ```trdimp``` and ```trsiam```.
 
-**Run the tracker on other benchmarks using GOT-10k toolkit** 
+**Run the tracker on other benchmarks using GOT-10k toolkit**
 Please refer to ```GOT10k_NFS.py```, ```GOT10k_UAV.py```, ```GOT10k_VOT.py``` for detials. Do not forget to change the dataset path in these scripts. 
 For example, to run and evaluate the TrDiMP and TrSiam on the NFS dataset: 
 ```bash
