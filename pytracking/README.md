@@ -6,17 +6,15 @@ A general python library for visual tracking algorithms.
 * [Running a tracker](#running-a-tracker)
 * [Overview](#overview)
 * [Trackers](#trackers)
-   * [DiMP](#DiMP)
+   * [TrDiMP and TrSiam](#TrDiMP and TrSiam)
    * [ATOM](#ATOM)
    * [ECO](#ECO)
 * [Analysis](#analysis)
 * [Libs](#libs)
-* [Visdom](#visdom)
-* [VOT Integration](#vot-integration)
 * [Integrating a new tracker](#integrating-a-new-tracker)
 
 
-## Running a tracker
+## Running a tracker using PyTracking Toolkit
 The installation script will automatically generate a local configuration file  "evaluation/local.py". In case the file was not generated, run ```evaluation.environment.create_default_local_file()``` to generate it. Next, set the paths to the datasets you want
 to use for evaluations. You can also change the path to the networks folder, and the path to the results folder, if you do not want to use the default paths. If all the dependencies have been correctly installed, you are set to run the trackers.  
 
@@ -44,12 +42,48 @@ python run_experiment.py experiment_module experiment_name --dataset_name datase
 ```  
 Here, ```experiment_module```  is the name of the experiment setting file, e.g. ```myexperiments``` , and ``` experiment_name```  is the name of the experiment setting, e.g. ``` atom_nfs_uav``` .
 
+Examples: run TrDiMP/TrSiam on the OTB:
+```bash
+python run_experiment.py myexperiments trdimp_otb
+```
+```bash
+python run_experiment.py myexperiments trsiam_otb
+```
+
 **Run the tracker on a video file**  
 This is done using the run_video script.  
 ```bash
 python run_video.py experiment_module experiment_name videofile --optional_box optional_box --debug debug
 ```  
 Here, ```videofile```  is the path to the video file. You can either draw the box by hand or provide it directly in the ```optional_box``` argument.
+
+
+## Running a tracker using GOT-10k Toolkit
+To evaluate the tracker on the GOT-10k benchmark, you can download the GOT-10k toolkit using ```pip```:
+```bash
+pip install --upgrade got10k
+```
+For more details, please refer to GOT-10K ([Github](https://github.com/got-10k/toolkit.git)). 
+
+To run and evaluate the tracker using GOT-10k toolkit, you have to modify the ```/tracker/trdimp/trdimp.py``` to ensure it supports the input and output formats of GOT-10k toolkit. ```/tracker/trdimp/trdimp_for_GOT.py``` is an example.
+
+**Run the tracker on the GOT-10k**  
+This is done using the ```GOT10k_GOT.py``` script
+```bash
+python GOT10k_GOT.py --tracker_name tracker_name --tracker_param tracker_param
+```
+Here, ```tracker_name``` is the name of tracker, e.g. ```trdimp```, ```tracker_param``` is the parameter setting, e.g. ```trdimp``` and ```trsiam```.
+
+**Run the tracker on other benchmarks using GOT-10k toolkit** 
+Please refer to ```GOT10k_NFS.py```, ```GOT10k_UAV.py```, ```GOT10k_VOT.py``` for detials. Do not forget to change the dataset path in these scripts. 
+For example, to run and evaluate the TrDiMP and TrSiam on the NFS dataset: 
+```bash
+python GOT10k_NFS.py --tracker_name trdimp --tracker_param trdimp
+```
+```bash
+python GOT10k_NFS.py --tracker_name trdimp --tracker_param trsiam
+```    
+
 
 ## Overview
 The tookit consists of the following sub-modules.  
@@ -69,21 +103,22 @@ The tookit consists of the following sub-modules.
 ## Trackers
  The toolkit contains the implementation of the following trackers.  
 
-### DiMP
-The official implementation for the DiMP tracker ([paper](https://arxiv.org/abs/1904.07220)) and PrDiMP tracker ([paper](https://arxiv.org/abs/2003.12565)). 
-The tracker implementation file can be found at [tracker.dimp](tracker/dimp). 
+### TrDiMP and TrSiam
+The official implementation for the TrDiMP tracker and TrSiam tracker. 
+The tracker implementation file can be found at [tracker.trdimp](tracker/trdimp). 
 
 ##### Parameter Files
-Four parameter settings are provided. These can be used to reproduce the results or as a starting point for your exploration.  
-* **[dimp18](parameter/dimp/dimp18.py)**: The default parameter setting with ResNet-18 backbone which was used to produce all DiMP-18 results in the paper, except on VOT.  
-* **[dimp18_vot](parameter/dimp/dimp18_vot.py)**: The parameters settings used to generate the DiMP-18 VOT2018 results in the paper.  
-* **[dimp50](parameter/dimp/dimp50.py)**: The default parameter setting with ResNet-50 backbone which was used to produce all DiMP-50 results in the paper, except on VOT.  
-* **[dimp50_vot](parameter/dimp/dimp50_vot.py)**: The parameters settings used to generate the DiMP-50 VOT2018 results in the paper.  
-* **[prdimp18](parameter/dimp/prdimp18.py)**: The default parameter setting with ResNet-18 backbone which was used to produce all PrDiMP-18 results in the paper, except on VOT.  
-* **[prdimp50](parameter/dimp/prdimp50.py)**: The default parameter setting with ResNet-50 backbone which was used to produce all PrDiMP-50 results in the paper, except on VOT.  
-* **[super_dimp](parameter/dimp/super_dimp.py)**: Combines the bounding-box regressor of PrDiMP with the standard DiMP classifier and better training and inference settings. 
+Illustrations of the parameter settings.
+* **[trdimp](parameter/trdimp/trdimp.py)**: The default parameter setting with ResNet-50 backbone which was used to produce TrDiMP results in the paper, except on VOT and LaSOT.  
+* **[trsiam](parameter/trdimp/trsiam.py)**: The default parameter setting with ResNet-50 backbone which was used to produce TrSiam results in the paper, except on VOT and LaSOT.  
+* **[trdimp_vot](parameter/trdimp/trdimp_vot.py)**: The parameters settings used to generate the TrDiMP VOT2018 results in the paper.  
+* **[trdimp_lasot](parameter/trdimp/trdimp_lasot.py)**: The parameters settings used to generate the TrDiMP LaSOT results in the paper. 
+
 
 The difference between the VOT and the non-VOT settings stems from the fact that the VOT protocol measures robustness in a very different manner compared to other benchmarks. In most benchmarks, it is highly important to be able to robustly *redetect* the target after e.g. an occlusion or brief target loss. On the other hand, in VOT the tracker is reset if the prediction does not overlap with the target on a *single* frame. This is then counted as a tracking failure. The capability of recovering after target loss is meaningless in this setting. The ```dimp18_vot``` and ```dimp50_vot``` settings thus focuses on avoiding target loss in the first place, while sacrificing re-detection ability. 
+
+In the long-term tracking benchmark LaSOT, due to the occlusion and out-of-view, we observe that updating the transformer memory will degrade the performance. In the ```trdimp_lasot``` and ```trsiam_lasot``` settings, we do not update the transformer. 
+
  
 ### ATOM
 The official implementation for the ATOM tracker ([paper](https://arxiv.org/abs/1811.07628)). 
@@ -111,40 +146,6 @@ The pytracking repository includes some general libraries for implementing and d
 * [**Fourier**](libs/fourier.py): Fourier tools and operations, which can be used for implementing DCF trackers.
 * [**DCF**](libs/dcf.py): Some general tools for DCF trackers.
 
-## Visdom
-
-All trackers support [Visdom](https://github.com/facebookresearch/visdom) for debug visualizations. To use visdom, start the visdom
-server from a seperate command line: 
-
-```bash
-visdom
-```  
-
-Run the tracker with the ```debug``` argument > 0. The debug output from the tracker can be 
-accessed by going to ```http://localhost:8097``` in your browser. Further, you can pause the execution of the tracker,
-or step through frames using keyboard inputs. 
-
-![visdom](.figs/visdom.png)
-
-## VOT Integration
-#### Python Toolkit (VOT 2020)
-Install the vot-python-toolkit and set up the workspace, as described in https://www.votchallenge.net/howto/tutorial_python.html. An example tracker description file to integrate a tracker in the vot-toolkit is provided at [VOT/trackers.ini](VOT/trackers.ini).
-
-
-#### MATLAB Toolkit (VOT 2014-2019)
-An example configuration file to integrate the trackers in the [VOT toolkit](https://github.com/votchallenge/vot-toolkit) is provided at [VOT/tracker_DiMP.m](VOT/tracker_DiMP.m). 
-Copy the configuration file to your VOT workspace and set the paths in the configuration file. You need to install [TraX](https://github.com/votchallenge/trax) 
-in order to run the trackers on VOT. This can be done with the following commands.
-
-```bash
-cd VOT_TOOLKIT_PATH/native/trax
-mkdir build
-cd build
-cmake -DBUILD_OPENCV=ON -DBUILD_CLIENT=ON ..
-make   
-``` 
-
-See https://trax.readthedocs.io/en/latest/index.html for more details about TraX.
 
 ## Integrating a new tracker  
  To implement a new tracker, create a new module in "tracker" folder with name your_tracker_name. This folder must contain the implementation of your tracker. Note that your tracker class must inherit from the base tracker class ```tracker.base.BaseTracker```.
