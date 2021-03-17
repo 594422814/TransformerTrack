@@ -3,7 +3,8 @@
 A general python library for visual tracking algorithms. 
 ## Table of Contents
 
-* [Running a tracker](#running-a-tracker)
+* [Running a tracker using Pytracking toolkit](#running-a-tracker-using-pytracking-toolkit)
+* [Running a tracker using GOT-10k toolkit](#running-a-tracker-using-got-10k-toolkit)
 * [Overview](#overview)
 * [Trackers](#trackers)
    * [TrDiMP and TrSiam](#trdimp-and-trsiam)
