@@ -16,6 +16,28 @@ In video object tracking, there exist rich temporal contexts among successive fr
 
 **Pre-trained model:** please download the [TrDiMP model](https://github.com/594422814/TransformerTrack/releases/download/model/trdimp_net.pth.tar) and put it in the ```pytracking/networks``` folder.
 
+## Environment Setup
+
+#### Clone the GIT repository.  
+```bash
+git clone https://github.com/visionml/pytracking.git
+```
+#### Clone the submodules.  
+In the repository directory, run the commands:  
+```bash
+git submodule update --init  
+```  
+#### Install dependencies
+Run the installation script to install all the dependencies. You need to provide the conda install path (e.g. ~/anaconda3) and the name for the created conda environment (here ```pytracking```).  
+```bash
+bash install.sh conda_install_path pytracking
+```  
+This script will also download the default networks and set-up the environment.  
+
+**Note:** The install script has been tested on an Ubuntu 18.04 system. In case of issues, check the [detailed installation instructions](INSTALL.md). 
+
+Our code is based on the PyTracking framework. For more details, please refer to [PyTracking](https://github.com/visionml/pytracking).
+
 ## Training the model
 
 Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/ltr/README.md) in the ```ltr``` folder.
