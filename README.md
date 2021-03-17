@@ -9,5 +9,18 @@ Accepted by **CVPR 2021 (Oral)**
 
 **Pre-trained model:** please download the [TrDiMP model](https://github.com/594422814/TransformerTrack/releases/download/model/trdimp_net.pth.tar) and put it in the ```pytracking/networks``` folder.
 
+### Citation
+If you find this work useful for your research, please consider citing our work:
+```
+@inproceedings{Wang_2021_Unsupervised,
+    title={Transformer Meets Tracker: Exploiting Temporal Context for Robust Visual Tracking},
+    author={Wang, Ning and Zhou, Wengang and Wang, Jie and Li, Houqiang},
+    booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2021}
+}
+```
+
+### Acknowledge
+Our transformer-assisted tracker is based on [PyTracking](https://github.com/visionml/pytracking). We sincerely thank the authors Martin Danelljan and Goutam Bhat for providing this framework.
 
 
