@@ -5,7 +5,7 @@ Accepted by **CVPR 2021 (Oral)**
 
 This repository includes Python (PyTorch) implementation of the TrDiMP and TrSiam trackers, to appear in CVPR 2021.
 
-![](../main/TransformerTrack.png)
+![](../main/TransformerTracker.png)
 
 ## Tracking results and pre-trained model
 
