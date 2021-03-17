@@ -1,5 +1,4 @@
 # Transformer Meets Tracker: Exploiting Temporal Context for Robust Visual Tracking
-
 Ning Wang, Wengang Zhou, Jie Wang, and Houqiang Li 
 
 Accepted by **CVPR 2021 (Oral)**
