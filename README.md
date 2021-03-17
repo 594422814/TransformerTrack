@@ -10,7 +10,7 @@ This repository includes Python (PyTorch) implementation of the TrDiMP and TrSia
 ## Abstract
 In video object tracking, there exist rich temporal contexts among successive frames, which have been largely overlooked in existing trackers. In this work, we bridge the individual video frames and explore the temporal contexts across them via a transformer architecture for robust object tracking. Different from classic usage of the transformer in natural language processing tasks, we separate its encoder and decoder into two parallel branches and carefully design them within the Siamese-like tracking pipelines. The transformer encoder promotes the target templates via attention-based feature reinforcement, which benefits the high-quality tracking model generation. The transformer decoder propagates the tracking cues from previous templates to the current frame, which facilitates the object searching process. Our transformer-assisted tracking framework is neat and trained in an end-to-end manner. With the proposed transformer, a simple Siamese matching approach is able to outperform the current top-performing trackers. By combining our transformer with the recent discriminative tracking pipeline, our method sets several new state-of-the-art records on prevalent tracking benchmarks. 
 
-## Tracking results and pre-trained model
+## Tracking Results and Pre-trained Model
 
 **Tracking results:** the raw results of TrDiMP/TrSiam on 7 benchmarks including OTB, UAV, NFS, VOT2018, GOT-10k, TrackingNet, and LaSOT can be found [here](https://github.com/594422814/TransformerTrack/releases/download/results/Tracking_results.zip).
 
@@ -38,11 +38,11 @@ This script will also download the default networks and set-up the environment.
 
 Our code is based on the PyTracking framework. For more details, please refer to [PyTracking](https://github.com/visionml/pytracking).
 
-## Training the model
+## Training the TrDiMP/TrSiam Model
 
 Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/ltr/README.md) in the ```ltr``` folder.
 
-## Testing the TrDiMP/TrSiam trackers
+## Testing the TrDiMP/TrSiam Tracker
 
 Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/pytracking/README.md) in the ```pytracking``` folder.
 
