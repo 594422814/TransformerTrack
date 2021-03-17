@@ -16,6 +16,15 @@ In video object tracking, there exist rich temporal contexts among successive fr
 
 **Pre-trained model:** please download the [TrDiMP model](https://github.com/594422814/TransformerTrack/releases/download/model/trdimp_net.pth.tar) and put it in the ```pytracking/networks``` folder.
 
+## Training the model
+
+Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/ltr/README.md) in the ```ltr``` folder.
+
+## Testing the TrDiMP/TrSiam trackers
+
+Please refer to the [README](https://github.com/594422814/TransformerTrack/blob/main/pytracking/README.md) in the ```pytracking``` folder.
+
+
 ### Citation
 If you find this work useful for your research, please consider citing our work:
 ```
