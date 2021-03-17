@@ -6,7 +6,7 @@ A general python library for visual tracking algorithms.
 * [Running a tracker](#running-a-tracker)
 * [Overview](#overview)
 * [Trackers](#trackers)
-   * [TrDiMP and TrSiam](#TrDiMP and TrSiam)
+   * [TrDiMP and TrSiam](#trdimp-and-trsiam)
    * [ATOM](#ATOM)
    * [ECO](#ECO)
 * [Analysis](#analysis)
