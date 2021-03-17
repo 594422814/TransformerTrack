@@ -51,7 +51,7 @@ As shown in ```pytracking/README.md```, you can either use this PyTracking toolk
 ## Citation
 If you find this work useful for your research, please consider citing our work:
 ```
-@inproceedings{Wang_2021_Unsupervised,
+@inproceedings{Wang_2021_Transformer,
     title={Transformer Meets Tracker: Exploiting Temporal Context for Robust Visual Tracking},
     author={Wang, Ning and Zhou, Wengang and Wang, Jie and Li, Houqiang},
     booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
