@@ -20,7 +20,7 @@ In video object tracking, there exist rich temporal contexts among successive fr
 
 #### Clone the GIT repository.  
 ```bash
-git clone https://github.com/visionml/pytracking.git
+git clone https://github.com/594422814/TransformerTrack.git
 ```
 #### Clone the submodules.  
 In the repository directory, run the commands:  
