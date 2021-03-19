@@ -6,7 +6,7 @@ A general PyTorch based framework for learning tracking representations.
 * [Quick Start](#quick-start)
 * [Overview](#overview)
 * [Trackers](#trackers)
-   * [TrDiMP/TrSiam](#trdimp/trsiam)
+   * [TrDiMP/TrSiam](#trdimp-/-trsiam)
    * [ATOM](#ATOM)
 * [Training your own networks](#training-your-own-networks)
 
