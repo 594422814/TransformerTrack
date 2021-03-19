@@ -8,6 +8,7 @@ A general PyTorch based framework for learning tracking representations.
 * [Trackers](#trackers)
    * [TrDiMP/TrSiam](#TrDiMP)
    * [ATOM](#ATOM)
+* [Transformer in TrDiMP](#transformer-in-trdimp)
 * [Training your own networks](#training-your-own-networks)
 
 ## Quick Start
@@ -52,7 +53,11 @@ The framework consists of the following sub-modules.
  - [bbreg.atom](train_settings/bbreg/atom.py): Newer settings used for training the network in ATOM, also utilizing the GOT10k dataset.
  - [bbreg.atom](train_settings/bbreg/atom_prob_ml.py): Settings for ATOM with the probabilistic bounding box regression proposed in [this paper](https://arxiv.org/abs/1909.12297). 
  - [bbreg.atom](train_settings/bbreg/atom_paper.py): The baseline ATOM* setting evaluated in [this paper](https://arxiv.org/abs/1909.12297).  
- 
+
+
+## Transformer in TrDiMP
+ If you are familiar with DiMP tracker as well as its original codes, you can easily follow our TrDiMP/TrSiam tracker by referring to the [transformer.py](models/target_classifier) and [dimpnet.py](models/tracking/dimpnet.py). 
+
 ## Training your own networks
 To train a custom network using the toolkit, the following components need to be specified in the train settings. For reference, see [atom.py](train_settings/bbreg/atom.py).  
 - Datasets: The datasets to be used for training. A number of standard tracking datasets are already available in ```dataset``` module.  
