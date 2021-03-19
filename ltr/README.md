@@ -56,7 +56,7 @@ The framework consists of the following sub-modules.
 
 
 ## Transformer in TrDiMP
- If you are familiar with DiMP tracker as well as its original codes, you can easily follow our TrDiMP/TrSiam tracker by referring to the [transformer.py](models/target_classifier) and [dimpnet.py](models/tracking/dimpnet.py). 
+ If you are familiar with DiMP tracker as well as its original codes, you can easily follow our TrDiMP/TrSiam tracker by referring to the [transformer.py](models/target_classifier/transformer.py) and [dimpnet.py](models/tracking/dimpnet.py). 
 
 ## Training your own networks
 To train a custom network using the toolkit, the following components need to be specified in the train settings. For reference, see [atom.py](train_settings/bbreg/atom.py).  
