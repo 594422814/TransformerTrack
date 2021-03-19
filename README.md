@@ -14,7 +14,9 @@ In video object tracking, there exist rich temporal contexts among successive fr
 
 **Tracking results:** the raw results of TrDiMP/TrSiam on 7 benchmarks including OTB, UAV, NFS, VOT2018, GOT-10k, TrackingNet, and LaSOT can be found [here](https://github.com/594422814/TransformerTrack/releases/download/results/Tracking_results.zip).
 
-**Pre-trained model:** please download the [TrDiMP model](https://github.com/594422814/TransformerTrack/releases/download/model/trdimp_net.pth.tar) and put it in the ```pytracking/networks``` folder.
+**Pretrained model:** please download the [TrDiMP model](https://github.com/594422814/TransformerTrack/releases/download/model/trdimp_net.pth.tar) and put it in the ```pytracking/networks``` folder.
+
+TrDiMP and TrSiam share the same model. The main difference between TrDiMP and TrSiam lies in the tracking model generation. TrSiam does not utilize the background information and simply crops the target/foreground area to generate the tracking model, which can be regarded as the initialization step of DiMP. 
 
 ## Environment Setup
 
