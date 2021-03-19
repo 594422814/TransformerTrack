@@ -43,7 +43,7 @@ The framework consists of the following sub-modules.
 
 ### TrDiMP
  The following setting file can be used train the TrDiMP/TrSiam network, or to know the exact training details. 
- - [dimp.transformer_dimp](train_settings/dimp/transformer_dimp.py): The default settings used for training the TrDiMP/TrSiam model with ResNet-50 backbone.
+ - [dimp.transformer_dimp](train_settings/dimp/transformer_dimp.py): The default settings used for training the TrDiMP/TrSiam model with ResNet-50 backbone. Note that TrSiam can be regarded as the initialization step of TrDiMP. Therefore, we use this trained model to perform both TrDiMP and TrSiam tracking.
 
  
 ### ATOM
