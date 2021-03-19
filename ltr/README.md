@@ -6,8 +6,7 @@ A general PyTorch based framework for learning tracking representations.
 * [Quick Start](#quick-start)
 * [Overview](#overview)
 * [Trackers](#trackers)
-   * [PrDiMP](#PrDiMP)
-   * [DiMP](#DiMP)
+   * [TrDiMP/TrSiam](#TrDiMP/TrSiam)
    * [ATOM](#ATOM)
 * [Training your own networks](#training-your-own-networks)
 
@@ -20,9 +19,9 @@ python run_training.py train_module train_name
 ```
 Here, ```train_module``` is the sub-module inside ```train_settings``` and ```train_name``` is the name of the train setting file to be used.
 
-For example, you can train using the included default ATOM settings by running:
+For example, you can train the proposed *TrDiMP/TrSiam* tracker by running:
 ```bash
-python run_training bbreg atom_default
+python run_training dimp transformer_dimp
 ```
 
 
@@ -42,16 +41,10 @@ The framework consists of the following sub-modules.
 ## Trackers
  The framework currently contains the training code for the following trackers.
 
-### PrDiMP
- The following setting files can be used train the DiMP networks, or to know the exact training details. 
- - [dimp.prdimp18](train_settings/dimp/prdimp18.py): The default settings used for training the PrDiMP model with ResNet-18 backbone.
- - [dimp.prdimp50](train_settings/dimp/prdimp50.py): The default settings used for training the PrDiMP model with ResNet-50 backbone. 
- - [dimp.super_dimp](train_settings/dimp/super_dimp.py): Combines the bounding-box regressor of PrDiMP with the standard DiMP classifier and better training and inference settings. 
- 
-### DiMP
- The following setting files can be used train the DiMP networks, or to know the exact training details. 
- - [dimp.dimp18](train_settings/dimp/dimp18.py): The default settings used for training the DiMP model with ResNet-18 backbone.
- - [dimp.dimp50](train_settings/dimp/dimp50.py): The default settings used for training the DiMP model with ResNet-50 backbone.
+### TrDiMP/TrSiam
+ The following setting file can be used train the TrDiMP/TrSiam network, or to know the exact training details. 
+ - [dimp.prdimp18](train_settings/dimp/transformer_dimp.py): The default settings used for training the TrDiMP/TrSiam model with ResNet-50 backbone.
+
  
 ### ATOM
  The following setting file can be used train the ATOM network, or to know the exact training details. 
