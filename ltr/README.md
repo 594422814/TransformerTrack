@@ -6,7 +6,7 @@ A general PyTorch based framework for learning tracking representations.
 * [Quick Start](#quick-start)
 * [Overview](#overview)
 * [Trackers](#trackers)
-   * [TrDiMP/TrSiam](#trdimp-/-trsiam)
+   * [TrDiMP/TrSiam](#TrDiMP)
    * [ATOM](#ATOM)
 * [Training your own networks](#training-your-own-networks)
 
@@ -41,7 +41,7 @@ The framework consists of the following sub-modules.
 ## Trackers
  The framework currently contains the training code for the following trackers.
 
-### TrDiMP/TrSiam
+### TrDiMP
  The following setting file can be used train the TrDiMP/TrSiam network, or to know the exact training details. 
  - [dimp.transformer_dimp](train_settings/dimp/transformer_dimp.py): The default settings used for training the TrDiMP/TrSiam model with ResNet-50 backbone.
 
