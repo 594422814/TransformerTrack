@@ -43,12 +43,12 @@ python run_experiment.py experiment_module experiment_name --dataset_name datase
 ```  
 Here, ```experiment_module```  is the name of the experiment setting file, e.g. ```myexperiments``` , and ``` experiment_name```  is the name of the experiment setting, e.g. ``` atom_nfs_uav``` .
 
-Examples: run TrDiMP/TrSiam on the OTB:
+Examples: run TrDiMP/TrSiam on the TrackingNet:
 ```bash
-python run_experiment.py myexperiments trdimp_otb
+python run_experiment.py myexperiments trdimp_trackingnet
 ```
 ```bash
-python run_experiment.py myexperiments trsiam_otb
+python run_experiment.py myexperiments trsiam_trackingnet
 ```
 
 **Run the tracker on a video file**  
