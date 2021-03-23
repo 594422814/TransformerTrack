@@ -11,12 +11,8 @@ import ltr.models.bbreg as bbmodels
 import ltr.models.backbone as backbones
 from ltr import model_constructor
 
-import ltr.models.target_classifier.transformer_encoder as trans_encoder
-import ltr.models.target_classifier.transformer_decoder as trans_decoder
 import ltr.models.target_classifier.transformer as transformer
 from ltr.models.target_classifier.multihead_attention import MultiheadAttention
-
-import pdb
 
 
 class DiMPnet(nn.Module):
