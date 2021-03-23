@@ -107,8 +107,8 @@ def sample_patch(im: torch.Tensor, pos: torch.Tensor, sample_sz: torch.Tensor, o
     szl = torch.max(sz.round(), torch.Tensor([2])).long()
 
     # Extract top and bottom coordinates
-    # tl = posl - (szl - 1)/2
-    # br = posl + szl/2 + 1
+    # tl = posl - (szl - 1)//2
+    # br = posl + szl//2 + 1
     tl = posl - torch.floor_divide(szl - 1, 2)
     br = posl + torch.floor_divide(szl, 2) + 1
 
