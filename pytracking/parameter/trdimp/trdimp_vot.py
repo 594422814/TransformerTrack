@@ -26,6 +26,10 @@ def parameters():
     params.net_opt_update_iter = 3
     params.net_opt_hn_iter = 3
 
+    # transformer memory update
+    params.transformer_skipping = 5
+    params.transformer_memory_size = 20
+
     # Detection parameters
     params.window_output = True
 
